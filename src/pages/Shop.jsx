@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
+import { useOutletContext } from "react-router-dom";
+
 
 
 function Shop(){
-
+    const { addToCart } = useOutletContext();
     const [allProducts, setProducts] = useState()
 
     //  Grab the products 
