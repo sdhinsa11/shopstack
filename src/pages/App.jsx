@@ -17,11 +17,3 @@ function App() {
 }
 
 export default App;
-
- {/* How <Outlet /> works
-      When React Router renders a nested route, it injects the matched child route’s element inside the parent’s <Outlet />.
-      So, for example, if you visit /shop:
-      Router sees the route path: "/" with element: <App />
-      Inside <App />, it renders <NavBar /> (always visible)
-      Then, it finds the matching child route { path: "shop", element: <Shop /> }
-      The <Shop /> component is rendered inside <Outlet /> */}
