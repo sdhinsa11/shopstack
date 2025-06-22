@@ -6,6 +6,7 @@ import { useOutletContext } from "react-router-dom";
 function Shop(){
     const { addToCart } = useOutletContext();
     const [allProducts, setProducts] = useState()
+    const [search, setSearchItem] = useState();
 
     //  Grab the products 
     useEffect( () => {
@@ -21,6 +22,7 @@ function Shop(){
                     id: product.id,
                     desc: product.description,
                     price: product.price, 
+                    category: product.category,
                     type: product.product_type,
                     colors: product.product_colors.slice(0, 7)
                 }));
