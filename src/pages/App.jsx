@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div>
-      <NavBar />
+      <NavBar /> {/* Always displayed */}
       <Outlet /> {/* This is where the "child" page content will appear, this is like the routes if we were doing this another way. */}
     </div>
   )
