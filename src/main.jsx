@@ -5,23 +5,17 @@ import './styles/App.css'
 import App from './pages/App.jsx';
 import Home from "./pages/Home.jsx";
 import Shop from "./pages/Shop.jsx";
+import Cart from "./pages/Cart.jsx"
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <App />, // go to "/"
-  },
-  {
-    path: "Home",
-    element: <Home />, // go to "/profile"
-  },
-  {
-    path: "Shop",
-    element: <Shop />, // go to "/profile"
-  },
-  {
-    path: "Cart",
-    element: <Cart />, // go to "/profile"
+    path: "/",              // Main layout route
+    element: <App />,       // App includes NavBar
+    children: [
+      { index: true, element: <Home /> },        // "/"
+      { path: "shop", element: <Shop /> },       // "/shop"
+      { path: "cart", element: <Cart /> },       // "/cart"
+    ],
   },
 ]);
 
