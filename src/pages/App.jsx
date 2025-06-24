@@ -10,6 +10,7 @@ function App() {
   const [cart, setCart] = useState(); // Cart state 
   const [searchItem, setSearchItem] = useState(''); // search item 
   const [allProducts, setProducts] = useState([]);
+  const [noSearch, setNoSearch] = useState(true); // No search 
 
   // fetch the products
   //  Grab the products 
@@ -49,8 +50,8 @@ function App() {
 
   return (
     <div>
-      <NavBar searchItem={searchItem} setSearchItem={setSearchItem} /> Always displayed
-      <Outlet context={{ cart, addToCart, searchItem, allProducts }} /> {/* This is where the "child" page content will appear, this is like the routes if we were doing this another way. */}
+      <NavBar searchItem={searchItem} setSearchItem={setSearchItem} noSearch={noSearch} setNoSearch={setNoSearch} />
+      <Outlet context={{ cart, addToCart, searchItem, allProducts, noSearch }} /> {/* This is where the "child" page content will appear, this is like the routes if we were doing this another way. */}
     </div>
   )
 }

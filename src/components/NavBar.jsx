@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import TextField from "@mui/material/TextField";
 import '../styles/Shop.css'
 
-function NavBar({searchItem, setSearchItem}){
+function NavBar({searchItem, setSearchItem, noSearch, setNoSearch}){
     const location = useLocation()
     const path = location.pathname.toLowerCase();
     const showSearch = path === '/shop';
@@ -24,13 +24,20 @@ function NavBar({searchItem, setSearchItem}){
                 <div>
                 {/* Only show search if it is in the home and search page */}
                 {showSearch && (
-                    <TextField
-                    variant="outlined"
-                    label="Search"
-                    fullWidth
-                    value={searchItem}
-                    onChange={(e) => setSearchItem(e.target.value.toLowerCase())}
-                    />
+                    <div>
+                        <TextField
+                        variant="outlined"
+                        label="Search"
+                        fullWidth
+                        value={searchItem}
+                        onChange={(e) => {
+                            setSearchItem(e.target.value.toLowerCase());
+                            setNoSearch(false);
+                          }}
+                        /> 
+                        <button onClick={() => {setNoSearch(!noSearch);
+                                                setSearchItem(''); }}>X</button>
+                    </div>
                 )}
                 </div>
 
