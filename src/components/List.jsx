@@ -1,6 +1,6 @@
 import { useState } from 'react'
   
-  function List({searchItem, allProducts}) {
+function List({searchItem, allProducts}) {
 
     const filteredData = allProducts.filter((el) =>{
         

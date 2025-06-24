@@ -28,7 +28,6 @@ function App() {
                 id: product.id,
                 desc: product.description,
                 price: product.price, 
-                category: product.category,
                 type: product.product_type,
                 colors: product.product_colors.slice(0, 7)
             }));

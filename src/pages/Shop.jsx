@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useOutletContext } from "react-router-dom";
 import List from "../components/List.jsx"
+import ProductCategory from "../components/ProductCategory.jsx"
 import TextField from "@mui/material/TextField";
 import '../styles/Shop.css'
 
@@ -21,8 +22,8 @@ function Shop(){
             {
                 // Only show the search item if x is not clicked 
                 noSearch ? 
-                    <h1>NO SEARCH JUST BROWSEEEE</h1> 
-                    :
+                    <ProductCategory allProducts={allProducts}/> 
+                    : 
                     <List searchItem={searchItem} allProducts={allProducts}/>
 
             }
