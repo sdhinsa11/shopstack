@@ -8,7 +8,7 @@ import '../styles/Shop.css'
 
 
 function Shop(){
-    // const noCart = false;
+    // const noCart = t;
     const { addToCart, allProducts, searchItem, noSearch } = useOutletContext(); // for each item
 
     // Search bar implementation - need a clear button so that when user clears it it goes to main page
@@ -23,7 +23,7 @@ function Shop(){
             {
                 // Only show the search item if x is not clicked 
                 noSearch ? 
-                    <ProductCategory products={allProducts} noCart={false}/> 
+                    <ProductCategory products={allProducts} noCart={true}/> 
                     : 
                     <List searchItem={searchItem} allProducts={allProducts}/>
 

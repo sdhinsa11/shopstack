@@ -1,10 +1,11 @@
 import { useState } from 'react'
+import Product from './Product.jsx'
   
 function ProductCategory({products, noCart}) {
     // products is both all products and cart products depending whose calling 
-
-    if (noCart){
-        const filteredData = products.reduce((acc, item) => { 
+    var filteredData =[]
+    // if (noCart){
+        filteredData = products.reduce((acc, item) => { 
             // In the context of grouping, the accumulator will be an object that stores 
             // the grouped data. Its initial value is typically an empty object {}.
     
@@ -33,26 +34,29 @@ function ProductCategory({products, noCart}) {
     
         }, {});
 
-    }
 
-    else {
-        const filteredData =[]
-    }
-
-    
-
-    // const filteredData = Object.groupBy(allProducts, type);
-
-    console.log(filteredData);
+    // console.log(filteredData);
 
 
+
+    // Loop Through each key 
+    // Display Key 
+    // Display Object in each list of that key using a component 
 
       return (
-          <ul>
-              {/* {g.map((item) => (
-                  <li key={item.id}>{item.brand} - {item.name}</li>
-              ))} */}
-          </ul>
+        <> 
+            {/* {noCart ? "hi" : "bye"} */}
+            {Object.keys(filteredData).map((key)  => (
+                <div className='category'>
+                    <h2>{key}</h2>
+                    <ul>
+                        {filteredData[key].map((item) => (
+                            <li key={item.id}>{item.brand} - {item.name}</li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
+        </>
       )
   }
   
