@@ -24,6 +24,7 @@ function ProductCategory({allProducts}) {
             acc[category] = [];
         }
 
+        // add current item to that category 
         acc[category].push(item);
 
         return acc;
