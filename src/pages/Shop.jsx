@@ -8,6 +8,7 @@ import '../styles/Shop.css'
 
 
 function Shop(){
+    // const noCart = false;
     const { addToCart, allProducts, searchItem, noSearch } = useOutletContext(); // for each item
 
     // Search bar implementation - need a clear button so that when user clears it it goes to main page
@@ -22,7 +23,7 @@ function Shop(){
             {
                 // Only show the search item if x is not clicked 
                 noSearch ? 
-                    <ProductCategory allProducts={allProducts}/> 
+                    <ProductCategory products={allProducts} noCart={false}/> 
                     : 
                     <List searchItem={searchItem} allProducts={allProducts}/>
 
@@ -32,7 +33,5 @@ function Shop(){
         </>
     )
 }
-
-//  This is where we call the API 
 
 export default Shop;
