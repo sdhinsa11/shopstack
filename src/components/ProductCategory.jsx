@@ -47,8 +47,8 @@ function ProductCategory({products, noCart}) {
         <> 
             {/* {noCart ? "hi" : "bye"} */}
             {Object.keys(filteredData).map((key)  => (
-                <div className='category'>
-                    <h2>{key}</h2>
+                <div key={key} className='category'>
+                    <h2 key={key}>{key}</h2>
                     <ul>
                         {filteredData[key].map((item) => (
                             <li key={item.id}>{item.brand} - {item.name}</li>

@@ -35,8 +35,8 @@ function NavBar({searchItem, setSearchItem, noSearch, setNoSearch}){
                             setNoSearch(false);
                           }}
                         /> 
-                        <button onClick={() => {setNoSearch(!noSearch);
-                                                setSearchItem(''); }}>X</button>
+                        <button onClick={() => {searchItem !== '' ? (setNoSearch(true), setSearchItem('')) 
+                                                                  : (setNoSearch()); }}>X</button>
                     </div>
                 )}
                 </div>

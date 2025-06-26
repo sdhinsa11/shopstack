@@ -8,7 +8,6 @@ import '../styles/Shop.css'
 
 
 function Shop(){
-    // const noCart = t;
     const { addToCart, allProducts, searchItem, noSearch } = useOutletContext(); // for each item
 
     // Search bar implementation - need a clear button so that when user clears it it goes to main page
