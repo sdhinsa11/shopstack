@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Product from './Product.jsx'
 import {useLocation } from 'react-router-dom';
   
-function ProductCategory({products, addToCart}) {
+function ProductCategory({products, addToCart, deleteFromCart}) {
     // to determine which page we are on
     const location = useLocation()
     const path = location.pathname.toLowerCase();
@@ -72,7 +72,7 @@ function ProductCategory({products, addToCart}) {
                                         <button>+</button>
                                         <div>Count: {item.number}</div>
                                         <button>-</button>
-                                        <button>Delete</button>
+                                        <button onClick= {() => {deleteFromCart(item)}}>Delete</button>
                                         
                                     </div>
                                    

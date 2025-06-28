@@ -30,7 +30,7 @@ function App() {
                 number: 0,
                 id: product.id,
                 desc: product.description,
-                price: product.price, 
+                price: parseFloat(product.price), 
                 type: product.product_type,
                 colors: product.product_colors.slice(0, 7)
             }));
@@ -64,15 +64,28 @@ function App() {
     }
   }; 
 
+  const deleteFromCart = (product) =>{ // Put this here because it's easier to put this here when the state is defined here 
+    // Need to handle the total number of items, the total price, the cart list, and the number for the product
+    setCartNum(cartNum-=product.number); // decreased by number of items we have for that product 
+    setCartPrice(price-= (product.price * product.number)); // decreased by price * number because you could have more than 1 item
+    product.number = 0; // set the number back to 0 for the product
+    setCart(cart.filter(p => p.id != product.id)) // get rid of the product 
+      
+       
+    }; // remove item from cart  
+
+    
+
   console.log(cart)
 
 
   return (
     <div>
       <NavBar searchItem={searchItem} setSearchItem={setSearchItem} noSearch={noSearch} setNoSearch={setNoSearch} />
-      <Outlet context={{ cart, addToCart, searchItem, allProducts, noSearch, cartNum, price }} /> {/* This is where the "child" page content will appear, this is like the routes if we were doing this another way. */}
+      <Outlet context={{ cart, addToCart, searchItem, allProducts, noSearch, cartNum, price, deleteFromCart }} /> {/* This is where the "child" page content will appear, this is like the routes if we were doing this another way. */}
     </div>
   )
-}
+
+};
 
 export default App;
