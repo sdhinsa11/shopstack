@@ -1,6 +1,6 @@
 import { useState } from 'react'
   
-function List({searchItem, allProducts}) {
+function List({searchItem, allProducts, addToCart}) {
 
     const filteredData = allProducts.filter((el) =>{
         
@@ -24,11 +24,15 @@ function List({searchItem, allProducts}) {
 
 
       return (
-          <ul>
+          <div>
               {filteredData.map((item) => (
-                  <li key={item.id}>{item.brand} - {item.name}</li>
+                  <div key={item.id} className='product'>
+                  <h4>{item.name}</h4>
+                  <h5>{item.brand}</h5>
+                  <button onClick= {() => {addToCart(item)}}>Add to Cart</button>
+              </div>
               ))}
-          </ul>
+          </div>
       )
   }
   
