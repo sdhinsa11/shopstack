@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Product from './Product.jsx'
   
-function ProductCategory({products, noCart}) {
+function ProductCategory({products, noCart, addToCart}) {
     // products is both all products and cart products depending whose calling 
     var filteredData =[]
     // if (noCart){
@@ -49,11 +49,16 @@ function ProductCategory({products, noCart}) {
             {Object.keys(filteredData).map((key)  => (
                 <div key={key} className='category'>
                     <h2 key={key}>{key}</h2>
-                    <ul>
+                    <div className='product'>
                         {filteredData[key].map((item) => (
-                            <li key={item.id}>{item.brand} - {item.name}</li>
+                            <div key={item.id} className='product'>
+                                <h4>{item.name}</h4>
+                                <h5>{item.brand}</h5>
+                                <button onClick= {() => {addToCart(item)}}>Add to Cart</button>
+                            </div>
+                            
                         ))}
-                    </ul>
+                    </div>
                 </div>
             ))}
         </>

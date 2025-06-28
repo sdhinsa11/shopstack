@@ -7,7 +7,7 @@ function App() {
   // This is a LAYOUT component and not a page so turn the nav bar into a component and then 
   // But this is always being displayed in all the component?
   //  The app is a nav bar comeponent? 
-  const [cart, setCart] = useState(); // Cart state 
+  const [cart, setCart] = useState([]); // Cart state 
   const [searchItem, setSearchItem] = useState(''); // search item 
   const [allProducts, setProducts] = useState([]);
   const [noSearch, setNoSearch] = useState(true); // No search 
@@ -45,6 +45,7 @@ function App() {
     setCart((prev) => [...prev, product]);
   };
 
+  console.log(cart)
 
 
   return (
