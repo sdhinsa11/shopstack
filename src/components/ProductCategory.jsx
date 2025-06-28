@@ -1,7 +1,13 @@
 import { useState } from 'react'
 import Product from './Product.jsx'
+import {useLocation } from 'react-router-dom';
   
-function ProductCategory({products, noCart, addToCart}) {
+function ProductCategory({products, addToCart}) {
+    // to determine which page we are on
+    const location = useLocation()
+    const path = location.pathname.toLowerCase();
+    const inShop = path === '/shop';
+
     // products is both all products and cart products depending whose calling 
     var filteredData =[]
     // if (noCart){
@@ -51,10 +57,26 @@ function ProductCategory({products, noCart, addToCart}) {
                     <h2 key={key}>{key}</h2>
                     <div className='product'>
                         {filteredData[key].map((item) => (
+                            // Replace this with the product component 
                             <div key={item.id} className='product'>
                                 <h4>{item.name}</h4>
                                 <h5>{item.brand}</h5>
-                                <button onClick= {() => {addToCart(item)}}>Add to Cart</button>
+                                <div>{item.price}</div>
+                                {inShop ? 
+                                    // On the shopping page 
+                                     <div> <button onClick= {() => {addToCart(item)}}>Add to Cart</button> </div>
+                                    :
+                                    // On the cart page 
+                                    <div className='add-sub-elements'>
+                                        {/* Add functionalities here */}
+                                        <button>+</button>
+                                        <div>Count: {item.number}</div>
+                                        <button>-</button>
+                                        <button>Delete</button>
+                                        
+                                    </div>
+                                   
+                                }
                             </div>
                             
                         ))}

@@ -7,10 +7,13 @@ function App() {
   // This is a LAYOUT component and not a page so turn the nav bar into a component and then 
   // But this is always being displayed in all the component?
   //  The app is a nav bar comeponent? 
-  const [cart, setCart] = useState([]); // Cart state 
+  const [cart, setCart] = useState([]); // Cart state
+  var [cartNum, setCartNum] = useState(0); 
+  var [price, setCartPrice] = useState(0);
   const [searchItem, setSearchItem] = useState(''); // search item 
   const [allProducts, setProducts] = useState([]);
   const [noSearch, setNoSearch] = useState(true); // No search 
+
 
   // fetch the products
   //  Grab the products 
@@ -42,8 +45,24 @@ function App() {
 
 
   const addToCart = (product) =>{
-    setCart((prev) => [...prev, product]);
-  };
+    // Check if item already in the cart and if so show an alert
+    const result = cart.filter(p => p.id == product.id ) // Filters the items in the list and if it is the product it is added to the list
+    console.log(result);
+    if (result.length > 0)
+    {
+        alert("Item is already added");
+        //  Or we can increase the number
+    }
+    else
+    {
+      // Set the cart list, increase the product number specifically, increase the number of items count and price
+      setCart((prev) => [...prev, product]);
+      product.number += 1;
+      setCartNum(cartNum+=1)
+      setCartPrice(price+=product.price);
+
+    }
+  }; 
 
   console.log(cart)
 
@@ -51,7 +70,7 @@ function App() {
   return (
     <div>
       <NavBar searchItem={searchItem} setSearchItem={setSearchItem} noSearch={noSearch} setNoSearch={setNoSearch} />
-      <Outlet context={{ cart, addToCart, searchItem, allProducts, noSearch }} /> {/* This is where the "child" page content will appear, this is like the routes if we were doing this another way. */}
+      <Outlet context={{ cart, addToCart, searchItem, allProducts, noSearch, cartNum, price }} /> {/* This is where the "child" page content will appear, this is like the routes if we were doing this another way. */}
     </div>
   )
 }
