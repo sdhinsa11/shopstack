@@ -72,7 +72,31 @@ function App() {
     setCart(cart.filter(p => p.id != product.id)) // get rid of the product 
       
        
-    }; // remove item from cart  
+  }; // remove item from cart 
+  
+  const increaseItem = (product) =>{ // Put this here because it's easier to put this here when the state is defined here 
+    // Need to handle the total number of items, the total price, and the number for the product
+    setCartNum(cartNum+=1); // decreased by number of items we have for that product 
+    setCartPrice(price+= (product.price)); // decreased by price * number because you could have more than 1 item
+    product.number += 1; // set the number back to 0 for the product
+     // get rid of the product 
+      
+       
+  }; // remove item from cart 
+
+  const decreaseItem = (product) =>{ // Put this here because it's easier to put this here when the state is defined here 
+      // Need to handle the total number of items, the total price, and the number for the product and if it can be negative product, delete from the list
+
+    setCartNum(cartNum-=1); // decreased by number of items we have for that product 
+    setCartPrice(price-= product.price); // decreased by price * number because you could have more than 1 item
+    product.number -=1;
+    
+    if (product.number == 0){
+    product.number = 0; // set the number back to 0 for the product
+    setCart(cart.filter(p => p.id != product.id)) // get rid of the product 
+    }
+    
+  }; // remove item from cart 
 
     
 
@@ -82,7 +106,7 @@ function App() {
   return (
     <div>
       <NavBar searchItem={searchItem} setSearchItem={setSearchItem} noSearch={noSearch} setNoSearch={setNoSearch} />
-      <Outlet context={{ cart, addToCart, searchItem, allProducts, noSearch, cartNum, price, deleteFromCart }} /> {/* This is where the "child" page content will appear, this is like the routes if we were doing this another way. */}
+      <Outlet context={{ cart, addToCart, searchItem, allProducts, noSearch, cartNum, price, deleteFromCart, increaseItem, decreaseItem }} /> {/* This is where the "child" page content will appear, this is like the routes if we were doing this another way. */}
     </div>
   )
 

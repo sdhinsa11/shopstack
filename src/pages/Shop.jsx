@@ -22,7 +22,7 @@ function Shop(){
             {
                 // Only show the search item if x is not clicked 
                 (noSearch || searchItem =='') ? 
-                    <ProductCategory products={allProducts} addToCart={addToCart}/> 
+                    <ProductCategory products = {allProducts}/> 
                     : 
                     <List searchItem={searchItem} allProducts={allProducts} addToCart={addToCart}/>
 

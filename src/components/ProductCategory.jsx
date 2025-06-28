@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import Product from './Product.jsx'
-import {useLocation } from 'react-router-dom';
+import {useLocation, useOutletContext } from 'react-router-dom';
   
-function ProductCategory({products, addToCart, deleteFromCart}) {
+function ProductCategory({products}) {
+    const {addToCart, deleteFromCart, increaseItem, decreaseItem} = useOutletContext();
     // to determine which page we are on
     const location = useLocation()
     const path = location.pathname.toLowerCase();
@@ -69,9 +70,9 @@ function ProductCategory({products, addToCart, deleteFromCart}) {
                                     // On the cart page 
                                     <div className='add-sub-elements'>
                                         {/* Add functionalities here */}
-                                        <button>+</button>
+                                        <button onClick = {() => {increaseItem(item)}}>+</button>
                                         <div>Count: {item.number}</div>
-                                        <button>-</button>
+                                        <button onClick= {() => {decreaseItem(item)}}>-</button>
                                         <button onClick= {() => {deleteFromCart(item)}}>Delete</button>
                                         
                                     </div>
