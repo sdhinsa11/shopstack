@@ -1,0 +1,70 @@
+body {
+    margin:0;
+    /* padding: 0; */
+}
+
+.main {
+    display: flex;
+    padding: 1.5rem;
+    /* Dont define a width for it to go out of page */
+    /* width: 100vw; */
+    align-items: center;
+    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(220, 50, 192);
+
+}
+
+
+.firstLinks{
+    display: flex;
+    justify-content: space-around;  
+    align-items: center;
+    /* Need the width or else justify-content takes up as little space */
+    width: 20%;
+    
+}
+
+
+/* https://www.w3schools.com/css/css_link.asp */
+a:link, a:visited{
+    background-color: rgb(220, 50, 192);
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    font-weight: bold;
+
+    /* color: rgb(220, 50, 192) */
+}
+
+/* mouse over link */
+a:hover, a:active {
+    background-color: hotpink;
+    color: white;
+  }
+  
+
+h3{
+    color: rgb(220, 50, 192);
+    font-weight: bolder;
+    font-size: large;
+}
+
+
+/* h1 {
+    margin: 10px;
+    font-size: 40px;
+    color: rgb(1, 1, 59);
+}
+
+.search {
+    width: 30%;
+}
+
+ul li {
+    font-size: 20px;
+}  */

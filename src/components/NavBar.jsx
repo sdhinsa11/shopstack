@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import TextField from "@mui/material/TextField";
-import '../styles/Shop.css'
+import '../styles/NavBar.css'
 
 function NavBar({searchItem, setSearchItem, noSearch, setNoSearch}){
     const location = useLocation()
@@ -10,18 +10,20 @@ function NavBar({searchItem, setSearchItem, noSearch, setNoSearch}){
 
     return (
         <>
-            <nav className="main ">
+            <nav className="main">
                 
-                <div>
+                <div className='firstLinks'>
+                    <h3>Shop Stack</h3>
                     {/* Link is too home */}
-                    <Link to="/">Home</Link> 
+                    <Link to="/" className='homeLink'>Home</Link> 
 
                     {/* Link is too Shop */}
                     <Link to="shop">Shop</Link>
+                    
 
                 </div>
 
-                <div>
+                <div className='searchBar'>
                 {/* Only show search if it is in the home and search page */}
                 {showSearch && (
                     <div>
@@ -40,6 +42,10 @@ function NavBar({searchItem, setSearchItem, noSearch, setNoSearch}){
                     </div>
                 )}
                 </div>
+
+                {/* <div>
+                    <h3>Shop Stack</h3>
+                </div> */}
 
 
                 
