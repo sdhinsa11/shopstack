@@ -72,7 +72,33 @@ h1{
     padding: 0;
 }
 
+.searchItems{
+    display: flex;
+}
 
+.bar{
+    margin-right: 0.2rem;
+}
+
+.bar .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+    border-color: rgb(220, 50, 192);;
+}
+  
+.bar .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: rgb(220, 50, 192);;
+}
+  
+.bar .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: hotpink;
+}
+
+.bar .MuiFormLabel-root{
+    color: rgb(220, 50, 192);
+}
+
+.bar .MuiInputLabel-root.Mui-focused {
+    color: hotpink;
+}
 
 
 

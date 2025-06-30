@@ -32,18 +32,20 @@ function NavBar({searchItem, setSearchItem, setNoSearch, cartNum}){
                 <div className='searchBar'>
                 {/* Only show search if it is in the home and search page */}
                 {showSearch && (
-                    <div>
+                    <div className='searchItems'>
                         <TextField
                         variant="outlined"
                         label="Search"
                         fullWidth
+                        size='small'
+                        className='bar'
                         value={searchItem}
                         onChange={(e) => {
                             setSearchItem(e.target.value.toLowerCase());
                             setNoSearch(false);
                           }}
                         /> 
-                        <button onClick={() => {searchItem !== '' ? (setNoSearch(true), setSearchItem('')) 
+                        <button className='xBtn'onClick={() => {searchItem !== '' ? (setNoSearch(true), setSearchItem('')) 
                                                                   : (setNoSearch(true)); }}>X</button>
                     </div>
                 )}
