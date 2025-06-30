@@ -28,7 +28,7 @@ body {
 
 
 /* https://www.w3schools.com/css/css_link.asp */
-a:link, a:visited{
+.one:link, .one:visited, .two:link, .two:visited {
     background-color: rgb(220, 50, 192);
     color: white;
     padding: 10px 15px;
@@ -42,17 +42,39 @@ a:link, a:visited{
 }
 
 /* mouse over link */
-a:hover, a:active {
+.one:hover, .one:active, .two:hover, .two:active {
     background-color: hotpink;
     color: white;
   }
   
 
-h3{
+h1{
     color: rgb(220, 50, 192);
     font-weight: bolder;
-    font-size: large;
 }
+
+.three{
+    color: rgb(220, 50, 192) ;
+}
+
+.three:active, .three:hover{
+    color:hotpink;
+    background-color: none;
+}
+
+.iconBtn:hover{
+    background-color: transparent !important;
+}
+
+.iconBtn{
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0;
+}
+
+
+
+
 
 
 /* h1 {

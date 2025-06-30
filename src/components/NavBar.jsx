@@ -1,11 +1,16 @@
 import { Link, useLocation } from 'react-router-dom';
+import { forwardRef } from 'react';
 import TextField from "@mui/material/TextField";
 import '../styles/NavBar.css'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { IconButton } from '@mui/material';
 
-function NavBar({searchItem, setSearchItem, noSearch, setNoSearch}){
+function NavBar({searchItem, setSearchItem, setNoSearch, cartNum}){
     const location = useLocation()
     const path = location.pathname.toLowerCase();
     const showSearch = path === '/shop';
+ 
+
 
 
     return (
@@ -13,12 +18,13 @@ function NavBar({searchItem, setSearchItem, noSearch, setNoSearch}){
             <nav className="main">
                 
                 <div className='firstLinks'>
-                    <h3>Shop Stack</h3>
+                    <h1>Shop Stack</h1>
                     {/* Link is too home */}
-                    <Link to="/" className='homeLink'>Home</Link> 
+                    <Link to="/" className='one'>Home</Link> 
 
                     {/* Link is too Shop */}
-                    <Link to="shop">Shop</Link>
+                    <Link to="shop" className='two'>Shop</Link>
+                    
                     
 
                 </div>
@@ -48,10 +54,20 @@ function NavBar({searchItem, setSearchItem, noSearch, setNoSearch}){
                 </div> */}
 
 
-                
+            {/* /* <Link to="cart">Cart</Link> */ }
                 <div>
+                    {/* https://stackoverflow.com/questions/62036213/how-to-put-routerlink-in-iconbutton-in-reactjs */}
                     {/* Link is too Shopping Cart */}
-                    <Link to="cart">Cart</Link>
+                    {/* <ShoppingCartIcon component={Link} to="cart">
+                    
+                    </ShoppingCartIcon> */}
+                    <IconButton className='iconBtn'component={Link} to="cart">
+                        <ShoppingCartIcon className='three'/>
+                        <div>{cartNum}</div>
+
+                    </IconButton>
+
+                    
                 </div>
 
 

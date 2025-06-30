@@ -105,7 +105,7 @@ function App() {
 
   return (
     <div>
-      <NavBar searchItem={searchItem} setSearchItem={setSearchItem} noSearch={noSearch} setNoSearch={setNoSearch} />
+      <NavBar searchItem={searchItem} setSearchItem={setSearchItem} setNoSearch={setNoSearch} cartNum={cartNum} />
       <Outlet context={{ cart, addToCart, searchItem, allProducts, noSearch, cartNum, price, deleteFromCart, increaseItem, decreaseItem }} /> {/* This is where the "child" page content will appear, this is like the routes if we were doing this another way. */}
     </div>
   )
