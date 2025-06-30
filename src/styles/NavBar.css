@@ -12,7 +12,8 @@ body {
     flex-direction: column;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: 1px solid rgb(220, 50, 192);
+    border-bottom: 3px solid rgb(154, 46, 94);
+    background-color: rgb(240, 231, 231);
 
 }
 
@@ -29,7 +30,7 @@ body {
 
 /* https://www.w3schools.com/css/css_link.asp */
 .one:link, .one:visited, .two:link, .two:visited {
-    background-color: rgb(220, 50, 192);
+    background-color: rgb(154, 46, 94);
     color: white;
     padding: 10px 15px;
     text-align: center;
@@ -42,62 +43,87 @@ body {
 }
 
 /* mouse over link */
-.one:hover, .one:active, .two:hover, .two:active {
-    background-color: hotpink;
+.one:hover, .one:active, .two:hover, .two:active, .xBtn:hover, .xBtn:active {
+    background-color: maroon;
     color: white;
   }
   
 
 h1{
-    color: rgb(220, 50, 192);
+    color: rgb(154, 46, 94);
     font-weight: bolder;
 }
 
 .three{
-    color: rgb(220, 50, 192) ;
+    color: rgb(154, 46, 94) ;
 }
 
 .three:active, .three:hover{
-    color:hotpink;
+    color:maroon;
     background-color: none;
 }
 
-.iconBtn:hover{
-    background-color: transparent !important;
-}
 
 .iconBtn{
     display: flex;
     flex-direction: column-reverse;
     padding: 0;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+}
+
+.iconBtn:hover,
+.iconBtn:active,
+.iconBtn:focus {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+    transition: none !important;
 }
 
 .searchItems{
     display: flex;
 }
 
-.bar{
-    margin-right: 0.2rem;
-}
+
 
 .bar .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
-    border-color: rgb(220, 50, 192);;
+    border-color: rgb(154, 46, 94);
+    padding-right: 20px;
+
+
 }
   
 .bar .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
-    border-color: rgb(220, 50, 192);;
+    border-color: rgb(154, 46, 94);
+    /* margin-right: 20px; */
+
 }
   
 .bar .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-    border-color: hotpink;
+    border-color: maroon;
 }
 
 .bar .MuiFormLabel-root{
-    color: rgb(220, 50, 192);
+    color: rgb(154, 46, 94);
 }
 
 .bar .MuiInputLabel-root.Mui-focused {
-    color: hotpink;
+    color: maroon;
+}
+
+.xBtn{
+    margin-left: 10px;
+    padding: 5px;
+    margin-top: 4px;
+    height: 30px;
+    border: 1px solid rgb(154, 46, 94);
+    color: rgb(154, 46, 94);
+    background-color: white;
+    border-radius: 5px;
 }
 
 

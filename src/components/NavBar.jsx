@@ -63,7 +63,7 @@ function NavBar({searchItem, setSearchItem, setNoSearch, cartNum}){
                     {/* <ShoppingCartIcon component={Link} to="cart">
                     
                     </ShoppingCartIcon> */}
-                    <IconButton className='iconBtn'component={Link} to="cart">
+                    <IconButton className='iconBtn'component={Link} to="cart" disableRipple disableFocusRipple>
                         <ShoppingCartIcon className='three'/>
                         <div>{cartNum}</div>
 
