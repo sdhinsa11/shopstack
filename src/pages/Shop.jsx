@@ -3,7 +3,7 @@ import { useOutletContext } from "react-router-dom";
 import List from "../components/List.jsx"
 import ProductCategory from "../components/ProductCategory.jsx"
 import TextField from "@mui/material/TextField";
-import '../styles/Shop.css'
+// import '../styles/Shop.css'
 
 
 
