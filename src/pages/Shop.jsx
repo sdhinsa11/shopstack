@@ -3,7 +3,7 @@ import { useOutletContext } from "react-router-dom";
 import List from "../components/List.jsx"
 import ProductCategory from "../components/ProductCategory.jsx"
 import TextField from "@mui/material/TextField";
-// import '../styles/Shop.css'
+import '../styles/Shop.css'
 
 
 
@@ -14,10 +14,11 @@ function Shop(){
 
     return (
         <>
-            <h1>This is the Shopping Page</h1>
             
-            <div className="main">
+            <div className="main-shop">
+                <h1>This is the Shopping Page</h1>
             {/* Leave this here but get the  */}
+                
 
             {
                 // Only show the search item if x is not clicked 

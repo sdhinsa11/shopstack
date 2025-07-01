@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Product from './Product.jsx'
 import {useLocation, useOutletContext } from 'react-router-dom';
+import '../styles/Shop.css'
   
 function ProductCategory({products}) {
     const {addToCart, deleteFromCart, increaseItem, decreaseItem} = useOutletContext();
@@ -56,22 +57,23 @@ function ProductCategory({products}) {
             {Object.keys(filteredData).map((key)  => (
                 <div key={key} className='category'>
                     <h2 key={key}>{key}</h2>
-                    <div className='product'>
+                    <div className='product-grid'>
                         {filteredData[key].map((item) => (
                             // Replace this with the product component 
-                            <div key={item.id} className='product'>
+                            <div key={item.id} className='product-card'>
                                 <h4>{item.name}</h4>
                                 <h5>{item.brand}</h5>
-                                <div>{item.price}</div>
+                                <p>${item.price}</p>
+                                <img className= 'product-image' src={item.image} alt={products.name}></img>
                                 {inShop ? 
                                     // On the shopping page 
-                                     <div> <button onClick= {() => {addToCart(item)}}>Add to Cart</button> </div>
+                                     <div> <button className="product-btn" onClick= {() => {addToCart(item)}}>Add to Cart</button> </div>
                                     :
                                     // On the cart page 
-                                    <div className='add-sub-elements'>
+                                    <div className='cart-controls'>
                                         {/* Add functionalities here */}
                                         <button onClick = {() => {increaseItem(item)}}>+</button>
-                                        <div>Count: {item.number}</div>
+                                        <span>Count: {item.number}</span>
                                         <button onClick= {() => {decreaseItem(item)}}>-</button>
                                         <button onClick= {() => {deleteFromCart(item)}}>Delete</button>
                                         
