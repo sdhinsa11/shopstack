@@ -95,6 +95,11 @@ function App() {
     product.number = 0; // set the number back to 0 for the product
     setCart(cart.filter(p => p.id != product.id)) // get rid of the product 
     }
+
+    if (cartNum == 0){
+      setCartPrice(0);
+    }
+    
     
   }; // remove item from cart 
 
