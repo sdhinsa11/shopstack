@@ -7,17 +7,7 @@ import Home from "./pages/Home.jsx";
 import Shop from "./pages/Shop.jsx";
 import Cart from "./pages/Cart.jsx"
 
-const router = createBrowserRouter([
-  {
-    path: "/",              // Main layout route
-    element: <App />,       // App includes NavBar
-    children: [
-      { index: true, element: <Home /> },        // "/"
-      { path: "shop", element: <Shop /> },       // "/shop"
-      { path: "cart", element: <Cart /> },       // "/cart"
-    ],
-  },
-]);
+
 
 // It's an array of route objects.
 // Each object has:
@@ -25,7 +15,20 @@ const router = createBrowserRouter([
 // element: the React component that should render for that path.
 
 
+const router = createBrowserRouter([
+  {
+    path: "/",              // Main layout route
+    element: <App />,       // App includes NavBar - component that renders for "/", acts like a layout for the nested routes 
+    children: [
+      { index: true, element: <Home /> },        // "/" (default of the "/")
+      { path: "shop", element: <Shop /> },       // "/shop" (shows the Shop page)
+      { path: "cart", element: <Cart /> },       // "/cart" (shows the Cart page)
+    ],
+  },
+]);
 
+
+// Rendering the route to tell react to use this one 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />

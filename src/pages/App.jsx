@@ -43,7 +43,6 @@ function App() {
 }, []); // dont want to refetch based on filter so we good 
 
 
-
   const addToCart = (product) =>{
     // Check if item already in the cart and if so show an alert
     const result = cart.filter(p => p.id == product.id ) // Filters the items in the list and if it is the product it is added to the list
@@ -112,6 +111,7 @@ function App() {
     <div>
       <NavBar searchItem={searchItem} setSearchItem={setSearchItem} setNoSearch={setNoSearch} cartNum={cartNum} />
       <Outlet context={{ cart, addToCart, searchItem, allProducts, noSearch, cartNum, price, deleteFromCart, increaseItem, decreaseItem }} /> {/* This is where the "child" page content will appear, this is like the routes if we were doing this another way. */}
+      {/* Outlet context passes data and variables between the different routes */}
     </div>
   )
 

@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom'; // allows you to navigate between the pages without refreshing 
 import { forwardRef } from 'react';
 import TextField from "@mui/material/TextField";
 import '../styles/NavBar.css'
@@ -8,7 +8,7 @@ import { IconButton } from '@mui/material';
 function NavBar({searchItem, setSearchItem, setNoSearch, cartNum}){
     const location = useLocation()
     const path = location.pathname.toLowerCase();
-    const showSearch = path === '/shop';
+    const showSearch = path === '/shop'; // when to show the search
  
 
 
@@ -24,13 +24,10 @@ function NavBar({searchItem, setSearchItem, setNoSearch, cartNum}){
 
                     {/* Link is too Shop */}
                     <Link to="shop" className='two'>Shop</Link>
-                    
-                    
-
                 </div>
 
                 <div className='searchBar'>
-                {/* Only show search if it is in the home and search page */}
+                {/* Only show search if it is in the home and shop page */}
                 {showSearch && (
                     <div className='searchItems'>
                         <TextField
@@ -63,7 +60,8 @@ function NavBar({searchItem, setSearchItem, setNoSearch, cartNum}){
                     {/* <ShoppingCartIcon component={Link} to="cart">
                     
                     </ShoppingCartIcon> */}
-                    <IconButton className='iconBtn'component={Link} to="cart" disableRipple disableFocusRipple>
+                    {/* Has link to the cart page */}
+                    <IconButton className='iconBtn'component={Link} to="cart" disableRipple disableFocusRipple> 
                         <ShoppingCartIcon className='three'/>
                         <div>{cartNum}</div>
 
