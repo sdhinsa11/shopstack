@@ -12,7 +12,6 @@ function NavBar({searchItem, setSearchItem, setNoSearch, cartNum}){
  
 
 
-
     return (
         <>
             <nav className="main">
