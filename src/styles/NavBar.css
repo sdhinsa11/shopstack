@@ -16,7 +16,7 @@ body {
     flex-direction: column;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: 3px solid #66023C;
+    /* border: 5px solid #66023C; */
     background-color: #CAD183;
 
 }
@@ -98,7 +98,6 @@ h1{
 }
 
 
-
 .bar .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
     border-color: #66023C;
     padding-right: 20px;
@@ -131,7 +130,7 @@ h1{
     height: 30px;
     border: 1px solid #66023C;
     color: #66023C;
-    background-color: white;
+    background-color: ffffffbb;
     border-radius: 5px;
 }
 

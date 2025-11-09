@@ -23,17 +23,52 @@ function List({searchItem, allProducts, addToCart}) {
 
 
 
-      return (
-          <div>
-              {filteredData.map((item) => (
-                  <div key={item.id} className='product'>
-                  <h4>{item.name}</h4>
-                  <h5>{item.brand}</h5>
-                  <button onClick= {() => {addToCart(item)}}>Add to Cart</button>
-              </div>
-              ))}
-          </div>
-      )
-  }
+    //   return (
+    //       <div>
+    //           {filteredData.map((item) => (
+    //               <div key={item.id} className='product'>
+    //               <h4>{item.name}</h4>
+    //               <h5>{item.brand}</h5>
+    //               <button onClick= {() => {addToCart(item)}}>Add to Cart</button>
+    //           </div>
+    //           ))}
+    //       </div>
+    //   )
+
+    // return (
+    //     <>
+    //         {Object.keys(filteredData).map((key) => (
+    //             <div key={key} className='category'>
+    //                 <div className='product-grid'>
+    //                     {filteredData[key].map((item) => (
+    //                         <div key={item.id} className='product-card'>
+    //                             <h4>{item.name}</h4>
+    //                             <h5>{item.brand}</h5>
+    //                             <p>${item.price}</p>
+    //                             <img className= 'product-image' src={item.image} alt={products.name}></img>
+    //                             <button onClick={() => { addToCart(item) }}>Add to Cart</button>
+    //                         </div>
+    //                     ))}
+    //                 </div>
+    //             </div>
+    //         ))}
+    //     </>
+    // );
+
+    return (
+        <div className="product-grid">
+            {filteredData.map((item) => (
+            <div key={item.id} className="product-card">
+                <h4>{item.name}</h4>
+                <h5>{item.brand}</h5>
+                <p>${item.price}</p>
+                <img className= 'product-image' src={item.image} alt={item.name}></img>
+                <button onClick={() => addToCart(item)}>Add to Cart</button>
+            </div>
+            ))}
+        </div>
+    );
+
+}
   
   export default List

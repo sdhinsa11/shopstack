@@ -1,0 +1,6 @@
+.prices-and-count{
+    display: flex;
+    flex-direction: row;
+    gap:2rem;
+    margin: 2rem;
+}

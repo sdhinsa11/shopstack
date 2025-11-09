@@ -16,7 +16,7 @@ function Shop(){
         <>
             
             <div className="main-shop">
-                <h1>This is the Shopping Page</h1>
+                {/* <h1>This is the Shopping Page</h1> */}
             {/* Leave this here but get the  */}
                 
 

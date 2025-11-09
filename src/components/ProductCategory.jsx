@@ -56,7 +56,9 @@ function ProductCategory({products}) {
             {/* {noCart ? "hi" : "bye"} */}
             {Object.keys(filteredData).map((key)  => (
                 <div key={key} className='category'>
-                    <h2 key={key}>{key}</h2>
+                    <h2 key={key}>{key.split('_') // split at underscores
+                                        .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // capitalize each
+                                        .join(' ')}</h2>
                     <div className='product-grid'>
                         {filteredData[key].map((item) => (
                             // Replace this with the product component 

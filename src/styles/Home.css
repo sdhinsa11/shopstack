@@ -1,7 +1,8 @@
 body{
-    background-image: url("../assets/mainPageImg.jpg");
+    /* background-image: url("../assets/mainPageImg.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: #CAD183;
     /* background-position: center; */
 }
 
@@ -9,8 +10,8 @@ body{
 .main-title{
     margin-top: 6rem;
     font-weight: bold;
-    font-size: 60px;
-    background-color: rgb(242, 216, 233);
+    font-size: 55px;
+    /* background-color: rgb(242, 216, 233); */
     padding: 1rem;
     border-radius: 5px;
 
@@ -32,7 +33,7 @@ body{
     width: 80%;
     font-size: 20px;
     margin: 0 auto;
-    background-color: rgb(242, 216, 233);
+    /* background-color: rgb(242, 216, 233); */
     padding: 2rem;
     border-radius: 5px;
 }
